@@ -92,7 +92,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative min-h-screen bg-[#0a0908]">
+    <main className="relative min-h-screen bg-[#0a0908] overflow-x-hidden">
       {/* Cursor glow effect */}
       <CursorGlow />
 

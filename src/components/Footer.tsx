@@ -69,7 +69,7 @@ export default function Footer() {
           >
             <span className="w-12 h-px bg-[#d4a574]/30" />
             <span className="font-body text-xs tracking-[0.5em] uppercase text-[#d4a574]">
-              2024
+              2025
             </span>
             <span className="w-12 h-px bg-[#d4a574]/30" />
           </motion.div>

@@ -136,7 +136,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
               animate={phase === "subtitle" || phase === "exit" ? { opacity: 0.7 } : {}}
               transition={{ duration: 1, delay: 0.8 }}
             >
-              Asia 2024
+              Asia 2025
             </motion.p>
           </div>
 

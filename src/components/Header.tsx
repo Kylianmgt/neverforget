@@ -70,7 +70,7 @@ export default function Header() {
         >
           <span className="hidden sm:inline">ASIA</span>
           <span className="w-4 h-px bg-[#d4a574]/40" />
-          <span className="text-[#d4a574]">2024</span>
+          <span className="text-[#d4a574]">2025</span>
         </motion.div>
       </div>
     </motion.header>

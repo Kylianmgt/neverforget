@@ -92,7 +92,7 @@ export default function QuoteSection() {
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.7 }}
         >
-          Adventures in Asia, 2024
+          Adventures in Asia, 2025
         </motion.p>
       </motion.div>
     </section>
