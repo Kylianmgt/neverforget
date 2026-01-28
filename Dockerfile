@@ -13,8 +13,8 @@ RUN apt-get update && apt-get install -y \
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci
+# Install dependencies (npm install handles cross-platform deps better than npm ci)
+RUN npm install
 
 # Copy source files
 COPY . .
