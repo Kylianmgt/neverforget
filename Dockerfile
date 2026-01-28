@@ -3,6 +3,13 @@ FROM node:20-slim AS builder
 
 WORKDIR /app
 
+# Install dependencies required for sharp and native modules
+RUN apt-get update && apt-get install -y \
+    python3 \
+    make \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
 # Copy package files
 COPY package*.json ./
 
