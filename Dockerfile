@@ -23,6 +23,9 @@ FROM node:20-alpine AS runner
 
 WORKDIR /app
 
+# Install runtime dependencies
+RUN apk add --no-cache libc6-compat
+
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
