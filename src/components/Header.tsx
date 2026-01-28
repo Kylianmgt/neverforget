@@ -46,17 +46,17 @@ export default function Header() {
         </motion.div>
 
         {/* Navigation */}
-        <nav className="hidden sm:flex items-center gap-8">
+        <nav className="flex items-center gap-4 sm:gap-8">
           <motion.a
             href="#gallery"
-            className="font-body text-sm tracking-widest uppercase text-[#6b6561] hover:text-[#d4a574] transition-colors"
+            className="font-body text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase text-[#6b6561] hover:text-[#d4a574] transition-colors"
             whileHover={{ y: -2 }}
           >
             Gallery
           </motion.a>
           <motion.a
             href="#about"
-            className="font-body text-sm tracking-widest uppercase text-[#6b6561] hover:text-[#d4a574] transition-colors"
+            className="font-body text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase text-[#6b6561] hover:text-[#d4a574] transition-colors"
             whileHover={{ y: -2 }}
           >
             Story

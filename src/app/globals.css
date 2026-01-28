@@ -265,9 +265,32 @@ body {
 
 /* Quote styling */
 .quote-mark {
-  font-size: 12rem;
+  font-size: 6rem;
   line-height: 1;
   position: absolute;
   opacity: 0.1;
   font-family: 'Cormorant Garamond', serif;
+}
+
+@media (min-width: 640px) {
+  .quote-mark {
+    font-size: 9rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .quote-mark {
+    font-size: 12rem;
+  }
+}
+
+/* Mobile touch improvements */
+@media (max-width: 640px) {
+  .masonry-grid {
+    column-gap: 0.75rem;
+  }
+
+  .masonry-item {
+    margin-bottom: 0.75rem;
+  }
 }

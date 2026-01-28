@@ -3,6 +3,9 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
+# Install build dependencies for native modules (sharp, etc.)
+RUN apk add --no-cache libc6-compat
+
 # Copy package files
 COPY package*.json ./
 

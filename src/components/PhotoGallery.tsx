@@ -165,7 +165,7 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
       <AnimatePresence>
         {selectedPhoto && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center lightbox-backdrop bg-[#0a0908]/95"
+            className="fixed inset-0 z-50 flex items-center justify-center lightbox-backdrop bg-[#0a0908]/95 p-4 sm:p-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -174,15 +174,18 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
           >
             {/* Close button */}
             <motion.button
-              className="absolute top-6 right-6 z-10 w-12 h-12 flex items-center justify-center text-[#f5f1eb]/60 hover:text-[#f5f1eb] transition-colors"
+              className="absolute top-3 right-3 sm:top-6 sm:right-6 z-10 w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center text-[#f5f1eb]/60 hover:text-[#f5f1eb] active:text-[#f5f1eb] transition-colors touch-manipulation"
               initial={{ opacity: 0, rotate: -90 }}
               animate={{ opacity: 1, rotate: 0 }}
               exit={{ opacity: 0, rotate: 90 }}
               transition={{ duration: 0.3 }}
-              onClick={() => setSelectedPhoto(null)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedPhoto(null);
+              }}
             >
               <svg
-                className="w-8 h-8"
+                className="w-7 h-7 sm:w-8 sm:h-8"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -198,7 +201,7 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
 
             {/* Navigation arrows */}
             <motion.button
-              className="absolute left-4 sm:left-8 z-10 w-12 h-12 flex items-center justify-center text-[#f5f1eb]/40 hover:text-[#d4a574] transition-colors"
+              className="absolute left-1 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 w-11 h-16 sm:w-12 sm:h-12 flex items-center justify-center text-[#f5f1eb]/40 hover:text-[#d4a574] active:text-[#d4a574] transition-colors touch-manipulation"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
@@ -213,7 +216,7 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
               }}
             >
               <svg
-                className="w-8 h-8"
+                className="w-7 h-7 sm:w-8 sm:h-8"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -228,7 +231,7 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
             </motion.button>
 
             <motion.button
-              className="absolute right-4 sm:right-8 z-10 w-12 h-12 flex items-center justify-center text-[#f5f1eb]/40 hover:text-[#d4a574] transition-colors"
+              className="absolute right-1 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 w-11 h-16 sm:w-12 sm:h-12 flex items-center justify-center text-[#f5f1eb]/40 hover:text-[#d4a574] active:text-[#d4a574] transition-colors touch-manipulation"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
@@ -242,7 +245,7 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
               }}
             >
               <svg
-                className="w-8 h-8"
+                className="w-7 h-7 sm:w-8 sm:h-8"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -258,7 +261,7 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
 
             {/* Image container */}
             <motion.div
-              className="relative max-w-[90vw] max-h-[85vh]"
+              className="relative max-w-[92vw] sm:max-w-[90vw] max-h-[75vh] sm:max-h-[80vh]"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -270,24 +273,24 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
                 alt={selectedPhoto.alt}
                 width={selectedPhoto.width}
                 height={selectedPhoto.height}
-                className="max-w-full max-h-[85vh] w-auto h-auto object-contain rounded-sm"
+                className="max-w-full max-h-[75vh] sm:max-h-[80vh] w-auto h-auto object-contain rounded-sm"
                 priority
               />
 
               {/* Image counter */}
               <motion.div
-                className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4"
+                className="absolute -bottom-10 sm:-bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-3 sm:gap-4"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <span className="font-display text-2xl text-[#d4a574]">
+                <span className="font-display text-xl sm:text-2xl text-[#d4a574]">
                   {String(
                     photos.findIndex((p) => p.src === selectedPhoto.src) + 1
                   ).padStart(2, "0")}
                 </span>
-                <span className="w-8 h-px bg-[#6b6561]" />
-                <span className="font-body text-sm text-[#6b6561]">
+                <span className="w-6 sm:w-8 h-px bg-[#6b6561]" />
+                <span className="font-body text-xs sm:text-sm text-[#6b6561]">
                   {String(photos.length).padStart(2, "0")}
                 </span>
               </motion.div>

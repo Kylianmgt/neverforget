@@ -91,19 +91,19 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
             </h1>
 
             {/* Subtitle */}
-            <div className="flex items-center justify-center gap-3 overflow-hidden">
+            <div className="flex items-center justify-center gap-2 sm:gap-3 overflow-hidden px-4">
               <motion.span
-                className="h-px bg-[#d4a574] origin-left"
+                className="hidden sm:block h-px bg-[#d4a574] origin-left"
                 initial={{ scaleX: 0 }}
                 animate={phase === "subtitle" || phase === "exit" ? { scaleX: 1 } : {}}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 style={{ width: 60 }}
               />
-              <div className="flex gap-2">
+              <div className="flex flex-wrap justify-center gap-1 sm:gap-2">
                 {subtitleWords.map((word, index) => (
                   <motion.span
                     key={index}
-                    className="font-body text-sm sm:text-base tracking-[0.3em] uppercase text-[#6b6561]"
+                    className="font-body text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.3em] uppercase text-[#6b6561]"
                     initial={{ y: 30, opacity: 0 }}
                     animate={
                       phase === "subtitle" || phase === "exit"
@@ -121,7 +121,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
                 ))}
               </div>
               <motion.span
-                className="h-px bg-[#d4a574] origin-right"
+                className="hidden sm:block h-px bg-[#d4a574] origin-right"
                 initial={{ scaleX: 0 }}
                 animate={phase === "subtitle" || phase === "exit" ? { scaleX: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}

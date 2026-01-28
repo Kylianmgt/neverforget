@@ -94,28 +94,28 @@ export default function HeroSection() {
 
         {/* Stats/Info */}
         <motion.div
-          className="flex items-center justify-center gap-8 sm:gap-16 mt-16"
+          className="flex items-center justify-center gap-4 xs:gap-6 sm:gap-16 mt-12 sm:mt-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
         >
           <div className="text-center">
-            <span className="font-display text-4xl sm:text-5xl text-[#d4a574]">80</span>
-            <p className="font-body text-xs tracking-[0.2em] uppercase text-[#6b6561] mt-2">
+            <span className="font-display text-3xl sm:text-4xl md:text-5xl text-[#d4a574]">80</span>
+            <p className="font-body text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#6b6561] mt-1 sm:mt-2">
               Moments
             </p>
           </div>
-          <div className="w-px h-12 bg-[#6b6561]/30" />
+          <div className="w-px h-8 sm:h-12 bg-[#6b6561]/30" />
           <div className="text-center">
-            <span className="font-display text-4xl sm:text-5xl text-[#d4a574]">1</span>
-            <p className="font-body text-xs tracking-[0.2em] uppercase text-[#6b6561] mt-2">
+            <span className="font-display text-3xl sm:text-4xl md:text-5xl text-[#d4a574]">1</span>
+            <p className="font-body text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#6b6561] mt-1 sm:mt-2">
               Journey
             </p>
           </div>
-          <div className="w-px h-12 bg-[#6b6561]/30" />
+          <div className="w-px h-8 sm:h-12 bg-[#6b6561]/30" />
           <div className="text-center">
-            <span className="font-display text-4xl sm:text-5xl text-[#d4a574]">&infin;</span>
-            <p className="font-body text-xs tracking-[0.2em] uppercase text-[#6b6561] mt-2">
+            <span className="font-display text-3xl sm:text-4xl md:text-5xl text-[#d4a574]">&infin;</span>
+            <p className="font-body text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#6b6561] mt-1 sm:mt-2">
               Memories
             </p>
           </div>
@@ -141,13 +141,13 @@ export default function HeroSection() {
 
       {/* Corner decorations */}
       <motion.div
-        className="absolute top-24 left-8 w-24 h-24 border-l border-t border-[#d4a574]/10"
+        className="hidden sm:block absolute top-24 left-4 sm:left-8 w-12 sm:w-24 h-12 sm:h-24 border-l border-t border-[#d4a574]/10"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 1.8 }}
       />
       <motion.div
-        className="absolute bottom-24 right-8 w-24 h-24 border-r border-b border-[#d4a574]/10"
+        className="hidden sm:block absolute bottom-24 right-4 sm:right-8 w-12 sm:w-24 h-12 sm:h-24 border-r border-b border-[#d4a574]/10"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 1.8 }}

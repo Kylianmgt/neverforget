@@ -84,11 +84,35 @@ export default function Footer() {
           >
             Crafted with memories and love
           </motion.p>
+
+          {/* Back to top - mobile */}
+          <motion.button
+            className="mt-8 sm:hidden flex flex-col items-center gap-2 text-[#6b6561] hover:text-[#d4a574] active:text-[#d4a574] transition-colors touch-manipulation"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            whileHover={{ y: -4 }}
+          >
+            <svg
+              className="w-5 h-5 rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+            <span className="font-body text-xs tracking-widest uppercase">
+              Top
+            </span>
+          </motion.button>
         </div>
 
-        {/* Back to top */}
+        {/* Back to top - desktop */}
         <motion.button
-          className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2 text-[#6b6561] hover:text-[#d4a574] transition-colors"
+          className="hidden sm:flex absolute right-6 top-1/2 -translate-y-1/2 flex-col items-center gap-2 text-[#6b6561] hover:text-[#d4a574] transition-colors"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           whileHover={{ y: -4 }}
         >
@@ -105,7 +129,7 @@ export default function Footer() {
               d="M19 14l-7 7m0 0l-7-7m7 7V3"
             />
           </svg>
-          <span className="font-body text-xs tracking-widest uppercase hidden sm:block">
+          <span className="font-body text-xs tracking-widest uppercase">
             Top
           </span>
         </motion.button>
