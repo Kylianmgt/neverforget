@@ -296,3 +296,54 @@ body {
     margin-bottom: 0.75rem;
   }
 }
+
+/* Lightbox swipe improvements */
+.lightbox-swipe-container {
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Prevent image dragging during swipe */
+.lightbox-swipe-container img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+
+/* Smooth image loading transition */
+img[data-loaded="true"] {
+  opacity: 1 !important;
+}
+
+/* Mobile-specific lightbox optimizations */
+@media (max-width: 640px) {
+  .lightbox-backdrop {
+    padding: 0.5rem;
+  }
+
+  /* Better touch targets for navigation */
+  .lightbox-nav-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Improve touch scrolling performance */
+@supports (-webkit-touch-callout: none) {
+  .masonry-grid {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .image-container img {
+    transition: none;
+  }
+
+  .image-container:hover img {
+    transform: none;
+  }
+}
